@@ -25,6 +25,9 @@ export class Actividad1 implements EventsAdminListener {
     private respuesta2: Button;
     private respuesta3: Button;
     private respuesta4: Button;
+    private arrPreguntas: String[];
+    private arrRespuestas: Array<String[]>;
+    private arrRespuestasCorrectas: String[];
 
     constructor(vMotor: Motor) {
         this.motor = vMotor;
@@ -32,6 +35,7 @@ export class Actividad1 implements EventsAdminListener {
         this.imagenFondo.setImg('./assets/fondo.jpg');
         this.motor.setRaiz(this.imagenFondo);
         this.crearEscenarioMenu();
+        this.crearEscenarioJuego();
     }
 
     /**
@@ -56,27 +60,48 @@ export class Actividad1 implements EventsAdminListener {
         this.btnContinuar.setTexto('Continuar');
         this.btnContinuar.setListener(this);
         this.motor.addViewToParentView(this.panelMenu, this.btnContinuar);
-        
 
-        this.btnSalir = new Button(this.motor,this.panelMenu.w/3,this.panelMenu.h/3*2,this.panelMenu.w/3,this.panelMenu.h/3);
+        this.btnSalir = new Button(this.motor,this.panelMenu.w / 3,this.panelMenu.h/3*2,this.panelMenu.w/3,this.panelMenu.h/3);
         this.btnSalir.setImagePath('./assets/btn.png');
         this.btnSalir.setTexto('Salir');
         this.motor.addViewToParentView(this.panelMenu, this.btnSalir);
-        
+
     }
 
     private crearEscenarioJuego(): void {
-        //Preguntas
-        //Respuestas
-        //Respuestas Correctas
+        // Preguntas
+        this.arrPreguntas = [
+            'De que color es el caballo blanco de santiago?',
+            'En ESTE BANco estan sentados un padre y su hijo, como se llama el padre?',
+            'Si 5 gatos cazan 5 ratones en 5 minutos.¿Cuantos gatos cazaran 100 ratones en 100 minutos?'
+        ];
+        // Respuestas
+
+        this.arrRespuestas = new Array<String[]>();
+        let arr1: String[] = ['#FFFFFF', '#000000', '#6d4747', '#565656'];
+        this.arrRespuestas[0] = arr1;
+        arr1 = ['Sinforiano', 'Eulalio', 'Decoroso', 'ESTEBAN'];
+        this.arrRespuestas[1] = arr1;
+        arr1 = ['5 gatos', '100 gatos', '20 gatos', 'Con metodologia Scrum 2 gatos'];
+        this.arrRespuestas[2] = arr1;
+        console.log(this.arrRespuestas);
+
+
+        this.arrRespuestasCorrectas = [
+            this.arrRespuestas[0][0],
+            this.arrRespuestas[1][1],
+            this.arrRespuestas[2][0]
+        ] ;
+
+        // Respuestas Correctas
     }
 
 
     screenSizeChanged?(vWidth:number,vHeight:number):void{
-        console.log("SE HA ACTUALIZADO EL TAMAÑO DE LA PANTALLA");
+        console.log('SE HA ACTUALIZADO EL TAMAÑO DE LA PANTALLA');
       }
 
-      buttonListenerOnClick?(btn:Button): void{
-        //if()
+      buttonListenerOnClick?(btn: Button): void{
+        // if()
       }
 }
