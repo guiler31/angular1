@@ -22,4 +22,15 @@ export class Window extends View {
 
     }
 
+    /**
+     * Metodo paint del boton (ademas de pintar los hijos, label e imagen, aqui iria el codigo que queramos dar al boton (padre)
+     * para pintarse)
+     * @param vctx Contexto donde se va a pintar
+     */
+    paint(vctx:CanvasRenderingContext2D){
+        
+        //console.log(this.xa+"========== "+this.ya);
+    }
+
+    
 }

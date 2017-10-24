@@ -5,6 +5,9 @@ import {DataHolder} from '../milib/dataholder/dataholder';
 import {Motor} from '../milib/engines/motor';
 import {Imagen} from '../milib/views/imgs/imagen';
 import {Button} from '../milib/views/buttons/button';
+import {Window} from '../milib/views/windows/window';
+import {Label} from '../milib/views/labels/label';
+
 
 
 export class Actividad1 implements EventsAdminListener {
@@ -16,7 +19,12 @@ export class Actividad1 implements EventsAdminListener {
     private btnStart: Button;
     private btnContinuar: Button;
     private btnSalir: Button;
-    
+    private window: Window;
+    private lblPregunta: Label;
+    private respuesta1: Button;
+    private respuesta2: Button;
+    private respuesta3: Button;
+    private respuesta4: Button;
 
     constructor(vMotor: Motor) {
         this.motor = vMotor;
@@ -58,7 +66,9 @@ export class Actividad1 implements EventsAdminListener {
     }
 
     private crearEscenarioJuego(): void {
-        
+        //Preguntas
+        //Respuestas
+        //Respuestas Correctas
     }
 
 
