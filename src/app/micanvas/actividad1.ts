@@ -101,37 +101,34 @@ export class Actividad1 implements EventsAdminListener {
 
         
 
-        this.btnRes1 = new Button(this.motor, this.panelMenu.w/2-400, this.panelMenu.h+100, this.panelMenu.w/3, this.panelMenu.h/3-9);
+        this.btnRes1 = new Button(this.motor, this.panelMenu.w/4-100, this.panelMenu.h+100, this.panelMenu.w/3, this.panelMenu.h/3-9);
         this.btnRes1.setImagePath('./assets/btn.png');
-        this.btnRes1.setTexto('Continuar');
         this.btnRes1.setListener(this);
         this.motor.addViewToParentView(this.window, this.btnRes1);
         
 
-        this.btnRes2 = new Button(this.motor, this.panelMenu.w/2-200, this.panelMenu.h+100, this.panelMenu.w/3, this.panelMenu.h/3-9);
+        this.btnRes2 = new Button(this.motor, this.panelMenu.w/2, this.panelMenu.h+100, this.panelMenu.w/3, this.panelMenu.h/3-9);
         this.btnRes2.setImagePath('./assets/btn.png');
-        this.btnRes2.setTexto('Continuar');
         this.btnRes2.setListener(this);
         this.motor.addViewToParentView(this.window, this.btnRes2);
         
 
-        this.btnRes3 = new Button(this.motor, this.panelMenu.w/2+200, this.panelMenu.h+100, this.panelMenu.w/3, this.panelMenu.h/3-9);
+        this.btnRes3 = new Button(this.motor, this.panelMenu.w-100, this.panelMenu.h+100, this.panelMenu.w/3, this.panelMenu.h/3-9);
         this.btnRes3.setImagePath('./assets/btn.png');
-        this.btnRes3.setTexto('Continuar');
         this.btnRes3.setListener(this);
         this.motor.addViewToParentView(this.window, this.btnRes3);
         
 
-        this.btnRes4 = new Button(this.motor, this.panelMenu.w, this.panelMenu.h+100, this.panelMenu.w/3, this.panelMenu.h/3-9);
+        this.btnRes4 = new Button(this.motor, this.panelMenu.w+200, this.panelMenu.h+100, this.panelMenu.w/3, this.panelMenu.h/3-9);
         this.btnRes4.setImagePath('./assets/btn.png');
-        this.btnRes4.setTexto('Continuar');
         this.btnRes4.setListener(this);
         this.motor.addViewToParentView(this.window, this.btnRes4);
         
 
-        this.lblPregunta = new Label(this.motor, this.panelMenu.w/2, this.panelMenu.h/ 3, this.panelMenu.w/3, this.panelMenu.h/3-9);
-        this.lblPregunta.setTexto('');
-        this.lblPregunta.setColor('color');
+        this.lblPregunta = new Label(this.motor, this.panelMenu.w/4-110, this.panelMenu.h/4-20, this.panelMenu.w+200, this.panelMenu.h/4);
+        this.lblPregunta.setColor('black');
+        this.lblPregunta.setFontColor('white');
+        this.lblPregunta.setFontStyle('20px Comic Sans MS');
         this.motor.addViewToParentView(this.window, this.lblPregunta);
         
 
