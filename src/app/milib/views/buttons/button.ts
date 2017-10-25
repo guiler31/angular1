@@ -9,35 +9,35 @@ import {Imagen} from '../imgs/imagen';
  */
 export class Button extends View {
 
-    private sColor:string=null;
-    private lblTexto:Label=null;
-    private listener:ButtonListener;
-    private imgBack:Imagen=null;
-    
+    private sColor: string= null;
+    private lblTexto: Label= null;
+    private listener: ButtonListener;
+    private imgBack: Imagen= null;
+
     /**
      * Metodo de inicializacion de los elementos visuales en el Boton. Se ejecuta ak finalizar el constructor del padre (View)
      */
     /*public initFinish():void{
-    
+
         this.imgBack=new Imagen(this.motor,0,0,this.w,this.h);
         this.motor.addViewToParentView(this,this.imgBack);
 
         this.lblTexto=new Label(this.motor,0,0,this.w,this.h);
-        this.lblTexto.setTexto("Boton");        
+        this.lblTexto.setTexto("Boton");
         this.motor.addViewToParentView(this,this.lblTexto);
 
         EventsAdmin.instance.addMouseClickToView(this);
 
     }*/
 
-    constructor(vmotor:Motor,vX:number,vY:number,vW:number,vH:number){
-        super(vmotor,vX,vY,vW,vH);
-        this.imgBack=new Imagen(this.motor,0,0,this.w,this.h);
-        this.motor.addViewToParentView(this,this.imgBack);
+    constructor(vmotor: Motor, vX: number, vY: number, vW: number, vH: number) {
+        super(vmotor, vX, vY, vW, vH);
+        this.imgBack = new Imagen(this.motor, 0, 0, this.w, this.h);
+        this.motor.addViewToParentView(this, this.imgBack);
 
-        this.lblTexto=new Label(this.motor,0,0,this.w,this.h);
-        this.lblTexto.setTexto("Boton");        
-        this.motor.addViewToParentView(this,this.lblTexto);
+        this.lblTexto = new Label(this.motor, 0, 0, this.w, this.h);
+        this.lblTexto.setTexto('Boton');
+        this.motor.addViewToParentView(this, this.lblTexto);
 
         EventsAdmin.instance.addMouseClickToView(this);
 
@@ -46,62 +46,71 @@ export class Button extends View {
     /**
      * Metodo de setter para el listener que escuche los eventos del boton.
      */
-    public setListener(listener:ButtonListener):void{
-        this.listener=listener;
+    public setListener(listener: ButtonListener): void {
+        this.listener = listener;
     }
 
     /**
      * Metodo que fija la imagen de fondo para el boton, que llama al metodo setImg de la clase Imagen
      * @param vsPath String que contendra la ruta a la imagen en los ASSETS. Ej: './assets/btnsback/back1.png'
      */
-    public setImagePath(vsPath:string):void{
+    public setImagePath(vsPath: string): void {
         this.imgBack.setImg(vsPath);
     }
-    
+
     /**
      * Metodo que setea el color de fondo del boton.
      */
-    public setColor(vsColor:string):void{
-        this.sColor=vsColor;
+    public setColor(vsColor: string): void {
+        this.sColor = vsColor;
     }
-    
+
     /**
      * Metodo paint del boton (ademas de pintar los hijos, label e imagen, aqui iria el codigo que queramos dar al boton (padre)
      * para pintarse)
      * @param vctx Contexto donde se va a pintar
      */
-    paint(vctx:CanvasRenderingContext2D){
-        
-        //console.log(this.xa+"========== "+this.ya);
+    paint(vctx: CanvasRenderingContext2D) {
+
+        // console.log(this.xa+"========== "+this.ya);
     }
 
     /**
      * Metodo para setear el texto del boton.
      * @param vtexto String: Texto del boton.
      */
-    public setTexto(vtexto:string){
+    public setTexto(vtexto: string) {
         this.lblTexto.setTexto(vtexto);
+    }
+
+    public setFontColor(colorLetra: string) {
+        this.lblTexto.setFontColor(colorLetra);
+    }
+
+    public setFontStyle(style: string) {
+        this.lblTexto.setFontStyle(style);
     }
 
     /**
      * Metodo heredado del padre View que se ejecutara cuando detecte que en el View se ha pinchado con el raton.
      * @param e Evento de MouseEvent con los detalles del evento.
      */
-    public mouseClicked(e:MouseEvent):void{
-        if(this.listener!=null && this.listener.buttonListenerOnClick!=undefined)
+    public mouseClicked(e: MouseEvent): void {
+        if (this.listener != null && this.listener.buttonListenerOnClick !== undefined){
             this.listener.buttonListenerOnClick(this);
+        }
     }
-    
+
 
 }
 
 /**
  * Interface que representara el listener del Boton.
  */
-export interface ButtonListener{
+export interface ButtonListener {
     /**
      * Metodo de notificacion del boton para avisar de que se ha presionado en el boton.
      */
-    buttonListenerOnClick?(btn:Button):void;
-   
+    buttonListenerOnClick?(btn: Button): void;
+
 }

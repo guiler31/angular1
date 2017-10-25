@@ -10,7 +10,7 @@ import {DataHolder} from '../../dataholder/dataholder';
 export class Window extends View {
 
     private sColor: string= null;
-    private btnSalir: Button= null;
+    public btnSalir: Button= null;
     private imgBack: Imagen= null;
 
     constructor(vmotor: Motor, vX: number, vY: number, vW: number, vH: number) {
@@ -20,6 +20,7 @@ export class Window extends View {
         this.btnSalir.setImagePath('./assets/btn.png');
         this.btnSalir.setTexto('Salir');
 
+
     }
 
     /**
@@ -27,10 +28,9 @@ export class Window extends View {
      * para pintarse)
      * @param vctx Contexto donde se va a pintar
      */
-    paint(vctx:CanvasRenderingContext2D){
-        
-        //console.log(this.xa+"========== "+this.ya);
+    paint(vctx: CanvasRenderingContext2D) {
+        // console.log(this.xa+"========== "+this.ya);
     }
 
-    
+
 }
