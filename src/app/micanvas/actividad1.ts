@@ -95,7 +95,7 @@ export class Actividad1 implements EventsAdminListener {
         this.arrRespuestas[0] = arr1;
         arr1 = ['Sinforiano', 'Eulalio', 'Decoroso', 'ESTEBAN'];
         this.arrRespuestas[1] = arr1;
-        arr1 = ['5 gatos', '100 gatos', '20 gatos', 'Con metodologia Scrum 2 gatos'];
+        arr1 = ['5 gatos', '100 gatos', '20 gatos', ' 2 gatos'];
         this.arrRespuestas[2] = arr1;
         console.log(this.arrRespuestas);
 
